@@ -1,0 +1,412 @@
+:root {
+    /* Primary */
+    --color-blue-950: hsl(213, 96%, 18%);
+    --color-purple-600: hsl(243, 100%, 62%);
+    --color-blue-300: hsl(228, 100%, 84%);
+    --color-blue-200: hsl(206, 94%, 87%);
+    --color-red-500: hsl(354, 84%, 57%);
+
+    /* Neutral */
+    --color-grey-500: hsl(231, 11%, 63%);
+    --color-purple-200: hsl(229, 24%, 87%);
+    --color-blue-100: hsl(218, 100%, 97%);
+    --color-blue-50: hsl(231, 100%, 99%);
+    --color-white: hsl(0, 100%, 100%)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main {
+    background-color: var(--color-blue-100);
+    height: 100vh;
+}
+
+.root-container {
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile */
+.root-container > .steps-wrapper {
+    background-image: url('./assets//images/bg-sidebar-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 172px;
+    /* position: relative */
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 1.5rem;
+}
+
+.root-container > .steps-wrapper > [class^='step-'] {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.root-container > .steps-wrapper > [class^='step-'] > button {
+    background-color: transparent;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1.5px solid white;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.root-container > .steps-wrapper > [class^='step-'].active button {
+    background-color: var(--color-blue-200);
+    color: var(--color-blue-950);
+}
+
+.root-container > .steps-wrapper > [class^='step-'] > .info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.root-container > .steps-wrapper > [class^='step-'] > .info > p:first-child {
+    text-transform: uppercase;
+    color: var(--color-blue-300);
+}
+
+.root-container > .steps-wrapper > [class^='step-'] > .info > p:last-child {
+    color: var(--color-white);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.root-container > .main {
+    flex: 1;
+    position: relative;
+}
+
+.root-container > .main > .content-wrapper {
+    background-color: var(--color-white);
+    width: 90%;
+    position: absolute;
+    top: -16%;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 1.75rem 1rem;
+    border-radius: 1rem;
+    /* flex: 1; */
+    /* position: relative; */
+}
+
+.root-container > .main > .content-wrapper > form > p.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-blue-950)
+}
+
+.root-container > .main > .content-wrapper > form > p.intro {
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--color-purple-200);
+    font-weight: 500;
+}
+
+.root-container > .main > .content-wrapper > form > .input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+.root-container > .main > .content-wrapper > form.step-1 > .input > div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.25rem;
+}
+
+.root-container > .main > .content-wrapper > form.step-1 > .input > div > label {
+    color: var(--color-blue-950);
+    font-weight: 400;
+}
+
+.root-container > .main > .content-wrapper > form.step-1 > .input > div > p.error-validation {
+    position: absolute;
+    right: 0;
+    color: var(--color-red-500);
+    font-weight: 700;
+}
+
+.root-container > .main > .content-wrapper > form.step-1 > .input > div > input {
+    padding: 0.75rem;
+    border: 1px solid var(--color-purple-200);
+    border-radius: 0.25rem;
+    color: var(--color-blue-950);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.root-container > .main > .content-wrapper > form.step-1 > .input > div > input::placeholder {
+    color: var(--color-purple-200);
+    font-weight: 700;
+}
+
+.root-container > .main > .content-wrapper > form.step-1 > .input > div > input:focus {
+    outline: none;
+    border: 2px solid var(--color-purple-600);
+}
+
+.root-container > .main > .content-wrapper > form.step-1 > .input > div > p.error-validation.active + input,
+.root-container > .main > .content-wrapper > form.step-1 > .input > div > p.error-validation.active + input:focus {
+    outline: none;
+    border: 1px solid var(--color-red-500);
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .input > .camera {
+    position: relative;
+    width: 60%;
+    aspect-ratio: 4/3;
+    /* height: 50%; */
+    padding: 5px;
+    border: 0.8px solid;
+    align-self: center;
+    flex: 1;
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .input > .camera > #video,
+.root-container > .main > .content-wrapper > form.step-2 > .input > .camera > img {
+    width: 100%;
+    height: 100%;
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .input > .camera > #canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .input > .camera > .loading-spinner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* width: 2rem; */
+    /* height: 2rem; */
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .input > .camera > .loading-spinner > svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    animation: spin 1s linear infinite;
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .input > button {
+    background-color: var(--color-blue-950);
+    width: fit-content;
+    padding: 0.75rem;
+    border: 0.8px solid;
+    border-radius: 0.5rem;
+    align-self: center;
+    color: var(--color-blue-50);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .file {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .file > a {
+    color: var(--color-blue-300);
+    cursor: pointer;
+}
+
+.root-container > .main > .content-wrapper > form.step-2 > .file > p {
+    font-style: italic;
+    font-weight: 700;
+    color: var(--color-blue-950);
+}
+
+.root-container > .main > .content-wrapper > .thanks {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+    text-align: center;
+}
+
+.root-container > .main > .content-wrapper > .thanks > img {
+    width: 3rem;
+    height: 3rem;
+    align-self: center;
+}
+
+.root-container > .main > .content-wrapper > .thanks > p.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-blue-950);
+}
+
+.root-container > .main > div:last-child {
+    background-color: var(--color-white);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* top: 0; */
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.root-container > .main > div:last-child > button#submit {
+    background-color: var(--color-blue-950);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    align-self: flex-end;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .root-container > .steps-wrapper {
+        column-gap: 1.75rem;
+    }
+
+    .root-container> .steps-wrapper > [class^='step-'] button {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .root-container > .main > .content-wrapper {
+        width: 540px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .root-container > .steps-wrapper {
+        column-gap: 2rem;
+    }
+
+    .root-container > .steps-wrapper > [class^='step-'] button {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1024px) {
+    main {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .root-container {
+        background-color: var(--color-white);
+        width: 992px;
+        max-width: 992px;
+        /* max-height: 584px; */
+        padding: 1rem;
+        border-radius: 1rem;
+        flex-direction: row;
+        /* align-items: center; */
+        overflow: auto;
+    }
+
+    .root-container > .steps-wrapper {
+        background-image: url('./assets/images/bg-sidebar-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 274px;
+        height: 584px;
+        min-height: 100%;
+        /* min-height: 584px; */
+        padding-left: 2rem;
+        padding-right: 2rem;
+        flex-direction: column;
+        justify-content: start;
+        row-gap: 2rem;
+    }
+
+    .root-container > .main {
+        padding: 0 3rem;
+        display: flex;
+        height: 584px;
+        min-height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .root-container > .main > .content-wrapper {
+        width: 100%;
+        padding: 0;
+        margin-top: 2rem;
+        position: static;
+        transform: none;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+    }
+
+    .root-container > .main > .content-wrapper > form > p.intro {
+        margin-bottom: 1.75rem;
+    }
+
+    .root-container > .main > .content-wrapper > form > .input {
+        row-gap: 1.25rem;
+    }
+
+    .root-container > .main > .content-wrapper > form.step-2 > .input > .camera > .loading-spinner > svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .root-container > .main > div:last-child {
+        position: static;
+        padding: 0;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

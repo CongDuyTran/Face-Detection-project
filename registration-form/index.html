@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  
+  <!-- StyleSheet -->
+  <link rel="stylesheet" href="./style.css"/>
+
+  <script src="./libs/axios-1.11.0/axios.min.js"></script>
+  <script type="module" src="app.js"></script>
+
+</head>
+<body>
+  <main>
+    <div class="root-container">
+      <div class="steps-wrapper">
+        <div class="step-1">
+          <button disabled>1</button>
+          <div class="info">
+            <p>bước 1</p>
+            <p>điền thông tin</p>
+          </div>
+        </div>
+        <div class="step-2">
+          <button disabled>2</button>
+          <div class="info">
+            <p>bước 2</p>
+            <p>thêm ảnh</p>
+          </div>
+        </div>
+        <div class="step-3">
+          <button disabled>3</button>
+          <div class="info">
+            <p>bước 3</p>
+            <p>hoàn thành</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="main">
+        <div class="content-wrapper"></div>
+        <div>
+          <button type="submit" id="submit" form="form">Tiếp tục</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

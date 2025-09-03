@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo checkin</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./libs//fontawesome-pro-6.6.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./libs/datatables-2.3.3/dataTables.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./libs/jquery-3.7.1/jquery.min.js"></script>
+    <script src="./libs/datatables-2.3.3/dataTables.js"></script>
+    <script src="./libs/axios-1.11.0/axios.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="title">Báo cáo check-in</div>
+        <div class="actions">
+            <button class="btn report">
+                <i class="fa-regular fa-files"></i>
+                Báo cáo checkin online
+            </button>
+            <button class="btn export">
+                <i class="fa-solid fa-file-export"></i>
+                Xuất file
+            </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="section">
+                <div class="label">
+                    <p>Tìm kiếm</p>
+                    <i class="fa-solid fa-circle-chevron-up"></i>
+                </div>
+                <div class="content">
+                    <input type="text" id="search" placeholder="Nhập nội dung tìm kiếm">
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">
+                    <p>Sự kiện</p>
+                    <i class="fa-solid fa-circle-chevron-up"></i>
+                </div>
+                <div class="content">
+                    <select id="event">
+                        <!-- <option>Hội thảo Công nghệ JDI</option> -->
+                    </select>
+                </div>
+            </div>
+            <div class="section">
+                <div class="label">
+                    <p>Thiết bị</p>
+                    <i class="fa-solid fa-circle-chevron-up"></i>
+                </div>
+                <div class="content">
+                    <select id="device">
+                        <option>Tất cả</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section stats">
+                <div class="label">
+                    <p>Thống kê</p>
+                    <i class="fa-solid fa-circle-chevron-up"></i>
+                </div>
+                <div class="content">
+                    <p>Tổng:&nbsp;<span>7155</span></p>
+                    <p>Có mặt:&nbsp;<span>2692</span></p>
+                    <p>Vắng mặt:&nbsp;<span>4463</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="report-title">Báo cáo checkin</div>
+            <div class="tabs">
+                <button class="active">Có mặt</button>
+                <button>Vắng mặt</button>
+            </div>
+            <table id="table">
+                <thead></thead>
+                <tbody></tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
